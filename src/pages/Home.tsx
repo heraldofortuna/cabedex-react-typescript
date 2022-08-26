@@ -49,11 +49,6 @@ const Home: React.FC = () => {
         <h1>{capitalize(pokename)}</h1>
         <h2>Base experience: {pokemon.base_experience}</h2>
       </div>
-      {/* <div>
-        {pokemons.map((pokemon) => (
-          <p>{pokemon.name}</p>
-        ))}
-      </div> */}
     </div>
   );
 };
