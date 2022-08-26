@@ -1,3 +1,9 @@
+export enum Infomode {
+  General = "general",
+  Stats = "stats",
+  Location = "location",
+}
+
 export interface PokemonsInterface {
   name: string;
   url: string;
@@ -5,14 +11,19 @@ export interface PokemonsInterface {
 
 export interface PokemonInterface {
   id: number;
-  name: string;
-  sprites: {
+  name?: string;
+  sprites?: {
     front_default: string;
   };
-  stats: {
+  stats?: {
     base_stat: number;
     stat: {
       name: string;
     };
   }[];
+  height?: number;
+  weight?: number;
+  abilities?: { ability: { name: string }; is_hidden: boolean }[];
+  types?: { type: { name: string } }[];
+  forms?: { name: string }[];
 }

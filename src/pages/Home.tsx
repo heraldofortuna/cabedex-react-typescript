@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import { getAllPokemons, getPokemon } from "../services/index";
-import { PokemonInterface, PokemonsInterface } from "../interfaces/index";
-import Pokemon from "../components/Pokemon";
+import { getAllPokemons } from "../services/index";
+import { PokemonsInterface } from "../interfaces/index";
+import { Link } from "react-router-dom";
 
 enum Status {
   Init = "init",
@@ -12,21 +12,11 @@ enum Status {
 const Home: React.FC = () => {
   const [status, setStatus] = useState<Status>(Status.Init);
   const [pokemons, setPokemons] = useState<PokemonsInterface[]>([]);
-  const [pokemon, setPokemon] = useState<PokemonInterface>();
 
   const handleAllPokemons = async () => {
     const allPokemons = await getAllPokemons();
 
     setPokemons(allPokemons);
-  };
-
-  const handlePokemon = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    const currentPokeName = event.currentTarget.pokename.value.toLowerCase();
-    const pokemon = await getPokemon(currentPokeName);
-
-    setPokemon(pokemon);
   };
 
   useEffect(() => {
@@ -40,18 +30,8 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>Hola Home</h1>
-      <div>
-        <form onSubmit={handlePokemon}>
-          <input
-            type="text"
-            name="pokename"
-            placeholder="Ingrese un Pokename:"
-          />
-          <button type="submit">Go!</button>
-        </form>
-      </div>
-      {pokemon && <Pokemon pokemon={pokemon} />}
+      <h1>Página Home</h1>
+      <Link to="pokemon">Buscar Pokemon</Link>
     </div>
   );
 };

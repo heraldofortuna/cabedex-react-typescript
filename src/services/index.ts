@@ -15,3 +15,10 @@ export const getPokemon = async (name: string) => {
 
   return response.data;
 };
+
+export const getLocations = async (id: number) => {
+  const request = axios.get(`${baseUrl}/${id}/encounters`);
+  const response = await request;
+
+  return response.data;
+};
