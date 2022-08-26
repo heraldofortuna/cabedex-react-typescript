@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 import { getAllPokemons, getPokemon } from "../services/index";
-import { PokemonsInterface } from "../interfaces/index";
-import { capitalize } from "../helpers/index";
+import { PokemonInterface, PokemonsInterface } from "../interfaces/index";
+import Pokemon from "../components/Pokemon";
+
+enum Status {
+  Init = "init",
+  Success = "success",
+}
 
 const Home: React.FC = () => {
+  const [status, setStatus] = useState<Status>(Status.Init);
   const [pokemons, setPokemons] = useState<PokemonsInterface[]>([]);
-  const [pokename, setPokename] = useState<string>("");
-  const [pokemon, setPokemon] = useState<any>([]);
+  const [pokemon, setPokemon] = useState<PokemonInterface>();
 
   const handleAllPokemons = async () => {
     const allPokemons = await getAllPokemons();
@@ -15,22 +20,23 @@ const Home: React.FC = () => {
     setPokemons(allPokemons);
   };
 
-  const handlePokemon = async (
-    event: React.FormEvent<HTMLFormElement>
-  ) => {
+  const handlePokemon = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const currentPokeName =
-      event.currentTarget.pokename.value.toLowerCase();
+    const currentPokeName = event.currentTarget.pokename.value.toLowerCase();
     const pokemon = await getPokemon(currentPokeName);
 
-    setPokename(currentPokeName);
     setPokemon(pokemon);
   };
 
   useEffect(() => {
     handleAllPokemons();
+    setStatus(Status.Success);
   }, []);
+
+  if (status === Status.Init) {
+    return <span>Loading ...</span>;
+  }
 
   return (
     <div>
@@ -45,10 +51,7 @@ const Home: React.FC = () => {
           <button type="submit">Go!</button>
         </form>
       </div>
-      <div>
-        <h1>{capitalize(pokename)}</h1>
-        <h2>Base experience: {pokemon.base_experience}</h2>
-      </div>
+      {pokemon && <Pokemon pokemon={pokemon} />}
     </div>
   );
 };
