@@ -1,26 +1,33 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Pokemon: React.FC = () => {
+  const navigate = useNavigate();
   const [pokename, setPokename] = useState<string>("");
 
-  const handlePokemon = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const currentPokeName = event.currentTarget.pokename.value.toLowerCase();
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+    const currentPokename = event.currentTarget.value.toLowerCase();
 
-    setPokename(currentPokeName);
+    setPokename(currentPokename);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    navigate(`/pokemon/${pokename}`);
   };
 
   return (
     <div>
       <div>
-        <form onSubmit={handlePokemon}>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="pokename"
             placeholder="Ingrese un Pokename:"
+            onChange={handleChange}
           />
-          <Link to={`${pokename}`}>Go!</Link>
+          <button type="submit">Go!</button>
         </form>
       </div>
     </div>

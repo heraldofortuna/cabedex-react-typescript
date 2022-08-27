@@ -28,8 +28,8 @@ const PokeGeneral: React.FC<Props> = ({ data }) => {
       </p>
       <p>
         Forms{" "}
-        {data?.forms?.map((form) => {
-          return <span>{form.name}</span>;
+        {data?.forms?.map((form, index) => {
+          return <span key={index}>{form.name}</span>;
         })}
       </p>
     </div>

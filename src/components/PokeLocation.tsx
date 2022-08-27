@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { getLocations } from "../services";
+import { getPokemonLocationsData } from "../services";
 
 interface Props {
   id: number;
@@ -10,7 +10,7 @@ const PokeLocation: React.FC<Props> = ({ id }) => {
   const [locations, setLocations] = useState<any>(null);
 
   const handleLocations = async (id: number) => {
-    const currentLocations = await getLocations(id);
+    const currentLocations = await getPokemonLocationsData(id);
 
     setLocations(currentLocations);
   };

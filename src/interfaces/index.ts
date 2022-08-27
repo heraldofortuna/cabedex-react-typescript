@@ -1,3 +1,8 @@
+export enum Status {
+  Init = "init",
+  Success = "success",
+}
+
 export enum Infomode {
   General = "general",
   Stats = "stats",
@@ -11,7 +16,7 @@ export interface PokemonsInterface {
 
 export interface PokemonInterface {
   id: number;
-  name?: string;
+  name: string;
   sprites?: {
     front_default: string;
   };
