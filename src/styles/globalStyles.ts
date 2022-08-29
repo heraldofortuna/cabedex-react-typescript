@@ -21,6 +21,17 @@ const GlobalStyle = createGlobalStyle`
     padding: 16px;
     margin: 0 auto;
   }
+
+  .wrapper {
+    outline: 1px solid green;
+    max-height: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
 `;
 
 export default GlobalStyle;
