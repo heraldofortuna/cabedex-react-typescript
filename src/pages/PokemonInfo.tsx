@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { capitalize } from "../helpers";
 import { Infomode, PokemonInterface, Status } from "../interfaces";
@@ -8,6 +8,7 @@ import { getPokemonData } from "../services";
 import PokeLocation from "../components/PokeLocation";
 import PokeStats from "../components/PokeStats";
 import PokeGeneral from "../components/PokeGeneral";
+import Button from "../components/Button";
 
 const PokemonInfo: React.FC = () => {
   const { pokename } = useParams() as { pokename: string };
@@ -48,12 +49,18 @@ const PokemonInfo: React.FC = () => {
 
   return (
     <div>
+      <Link to="/pokemon">
+        <Button text="Back" />
+      </Link>
       <h2>{capitalize(pokemon.name)}</h2>
       <img src={pokemon?.sprites?.front_default} alt={pokemon.name} />
       <div>
-        <button onClick={() => setPokeinfo(Infomode.General)}>General</button>
-        <button onClick={() => setPokeinfo(Infomode.Stats)}>Stats</button>
-        <button onClick={() => setPokeinfo(Infomode.Location)}>Location</button>
+        <Button onClick={() => setPokeinfo(Infomode.General)} text="General" />
+        <Button onClick={() => setPokeinfo(Infomode.Stats)} text="Stats" />
+        <Button
+          onClick={() => setPokeinfo(Infomode.Location)}
+          text="Location"
+        />
       </div>
       {renderData[pokeinfo]}
     </div>

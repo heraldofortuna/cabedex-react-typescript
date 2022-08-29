@@ -32,3 +32,9 @@ export interface PokemonInterface {
   types?: { type: { name: string } }[];
   forms?: { name: string }[];
 }
+
+export interface ButtonInterface {
+  text: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  type?: "button" | "submit" | "reset" | undefined;
+}

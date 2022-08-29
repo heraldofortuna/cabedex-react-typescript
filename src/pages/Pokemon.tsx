@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import Button from "../components/Button";
 
 const Pokemon: React.FC = () => {
   const navigate = useNavigate();
@@ -20,14 +22,17 @@ const Pokemon: React.FC = () => {
   return (
     <div>
       <div>
+        <Link to="/">
+          <Button text="Back" />
+        </Link>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="pokename"
-            placeholder="Ingrese un Pokename:"
+            placeholder="Enter a Pokename"
             onChange={handleChange}
           />
-          <button type="submit">Go!</button>
+          <Button text="Go!" type="submit" />
         </form>
       </div>
     </div>
