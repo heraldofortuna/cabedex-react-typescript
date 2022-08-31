@@ -9,6 +9,19 @@ export enum Infomode {
   Location = "location",
 }
 
+export interface ButtonInterface {
+  text: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  type?: "button" | "submit" | "reset" | undefined;
+}
+
+export interface InputInterface {
+  type: React.HTMLInputTypeAttribute;
+  name: string;
+  placeholder: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+}
+
 export interface PokemonsInterface {
   name: string;
   url: string;
@@ -33,15 +46,13 @@ export interface PokemonInterface {
   forms?: { name: string }[];
 }
 
-export interface ButtonInterface {
-  text: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  type?: "button" | "submit" | "reset" | undefined;
+export interface PokeLocationsInterface {
+  id: number;
 }
 
-export interface InputInterface {
-  type: React.HTMLInputTypeAttribute;
-  name: string;
-  placeholder: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+export interface PokeLocationInterface {
+  location_area: {
+    name: string;
+    url: string;
+  };
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import styled from "styled-components";
 
 import { capitalize } from "../helpers";
 import { Infomode, PokemonInterface, Status } from "../interfaces";
@@ -9,6 +10,34 @@ import PokeLocation from "../components/PokeLocation";
 import PokeStats from "../components/PokeStats";
 import PokeGeneral from "../components/PokeGeneral";
 import Button from "../components/Button";
+
+const StyledContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+const StyledHeaderInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  & > img {
+    width: 200px;
+    border: 4px solid black;
+  }
+`;
+
+const StyledInfoMode = styled.div`
+  width: 100%;
+  display: flex;
+  flex: 3;
+  & > button {
+    flex: 1;
+  }
+`;
 
 const PokemonInfo: React.FC = () => {
   const { pokename } = useParams() as { pokename: string };
@@ -48,22 +77,27 @@ const PokemonInfo: React.FC = () => {
   if (status === Status.Init) return <span>Loading data ...</span>;
 
   return (
-    <div>
+    <StyledContainer>
       <Link to="/pokemon">
         <Button text="Back" />
       </Link>
-      <h2>{capitalize(pokemon.name)}</h2>
-      <img src={pokemon?.sprites?.front_default} alt={pokemon.name} />
-      <div>
-        <Button onClick={() => setPokeinfo(Infomode.General)} text="General" />
-        <Button onClick={() => setPokeinfo(Infomode.Stats)} text="Stats" />
-        <Button
-          onClick={() => setPokeinfo(Infomode.Location)}
-          text="Location"
-        />
-      </div>
+      <StyledHeaderInfo>
+        <h2>{capitalize(pokemon.name)}</h2>
+        <img src={pokemon?.sprites?.front_default} alt={pokemon.name} />
+        <StyledInfoMode>
+          <Button
+            onClick={() => setPokeinfo(Infomode.General)}
+            text="General"
+          />
+          <Button onClick={() => setPokeinfo(Infomode.Stats)} text="Stats" />
+          <Button
+            onClick={() => setPokeinfo(Infomode.Location)}
+            text="Location"
+          />
+        </StyledInfoMode>
+      </StyledHeaderInfo>
       {renderData[pokeinfo]}
-    </div>
+    </StyledContainer>
   );
 };
 
