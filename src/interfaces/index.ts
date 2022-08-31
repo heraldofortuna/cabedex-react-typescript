@@ -38,3 +38,10 @@ export interface ButtonInterface {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   type?: "button" | "submit" | "reset" | undefined;
 }
+
+export interface InputInterface {
+  type: React.HTMLInputTypeAttribute;
+  name: string;
+  placeholder: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+}

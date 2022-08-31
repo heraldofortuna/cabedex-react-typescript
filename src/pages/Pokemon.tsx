@@ -1,7 +1,21 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 import Button from "../components/Button";
+import Input from "../components/Input";
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+const StyledFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
 
 const Pokemon: React.FC = () => {
   const navigate = useNavigate();
@@ -20,22 +34,22 @@ const Pokemon: React.FC = () => {
   };
 
   return (
-    <div>
-      <div>
-        <Link to="/">
-          <Button text="Back" />
-        </Link>
-        <form onSubmit={handleSubmit}>
-          <input
+    <StyledContainer>
+      <Link to="/">
+        <Button text="Back" />
+      </Link>
+      <form onSubmit={handleSubmit}>
+        <StyledFormContainer>
+          <Input
             type="text"
             name="pokename"
             placeholder="Enter a Pokename"
             onChange={handleChange}
           />
           <Button text="Go!" type="submit" />
-        </form>
-      </div>
-    </div>
+        </StyledFormContainer>
+      </form>
+    </StyledContainer>
   );
 };
 
