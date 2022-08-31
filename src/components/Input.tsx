@@ -13,7 +13,12 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = ({ type, name, placeholder, onChange }: InputInterface) => {
+const Input: React.FC<InputInterface> = ({
+  type,
+  name,
+  placeholder,
+  onChange,
+}) => {
   return (
     <StyledInput
       type={type}

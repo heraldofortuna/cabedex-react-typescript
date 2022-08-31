@@ -5,14 +5,12 @@ import styled from "styled-components";
 import Button from "../components/Button";
 
 const StyledContainer = styled.div`
-  outline: 1px solid blue;
   display: flex;
   flex-direction: column;
   gap: 32px;
 `;
 
 const StyledOptions = styled.div`
-  outline: 1px solid purple;
   text-align: center;
   display: flex;
   flex-direction: column;

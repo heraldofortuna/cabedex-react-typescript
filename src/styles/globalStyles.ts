@@ -23,7 +23,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .wrapper {
-    outline: 1px solid green;
     max-height: 100%;
     height: 100%;
     display: flex;
