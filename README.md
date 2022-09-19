@@ -1,46 +1,136 @@
-# Getting Started with Create React App
+# Cabedex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Project Image](./src/assets/screenshot1.png)
 
-## Available Scripts
+> Screenshot - Página principal o Home
 
-In the project directory, you can run:
+![Project Image](./src/assets/screenshot2.png)
 
-### `npm start`
+> Screenshot - Página de búsqueda de un Pokemon por su nombre
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Project Image](./src/assets/screenshot3.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> Screenshot - Página información del Pokemon buscado
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tabla de contenidos
 
-### `npm run build`
+- [Descripción](#descripción)
+- [¿Cómo usar esta aplicación?](#cómo-usar-esta-aplicación)
+- [Referencias](#referencias)
+- [Licencia](#licencia)
+- [Autor](#autor)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Descripción
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Single Page Application que nos permite crear, editar, eliminar y filtrar tarjetas con distintos servicios ofrecidos.
 
-### `npm run eject`
+### Tecnologías
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- HTML
+- CSS
+- TypeScript
+- React
+- Styled components
+- React router
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Ir al inicio](#cabedex)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## ¿Cómo usar esta aplicación?
 
-## Learn More
+Primero, clona el repositorio usando tu llave pública ssh en la carpeta local de tu preferencia, usando el siguiente comando:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```html
+$ git clone git@github.com:heraldofortuna/cabedex-react-typescript.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ahora, ingresa al directorio de la aplicación:
+
+```html
+$ cd cabedex-react-typescript
+```
+
+Luego, instala las dependencias de la aplicación corriendo el siguiente comando npm:
+
+```html
+npm install
+```
+
+Una vez cargado todo, ya estamos listos para arrancar la aplicación ingresando lo siguiente:
+
+```html
+npm start
+```
+
+Finalmente, abrimos el link de nuestro localhost [http://localhost:3000](http://localhost:3000) para ver nuestro desarrollo en un ambiente seguro.
+
+- Ojo: La aplicación ya se encuentra deployada en la web en el siguiente enlace gh:
+
+```html
+https://heraldofortuna.github.io/cabedex-react-typescript/
+```
+
+---
+
+## Referencias
+
+Documentación oficial de React + Typescript
+
+```html
+https://es.reactjs.org/docs/static-type-checking.html#using-typescript-with-create-react-app
+```
+
+[Ir al inicio](#cabedex)
+
+---
+
+## Comentarios
+
+- La aplicación aun no está terminada al 100%, pues solo está habilitado en el menú de opciones, la opción de búsqueda de un Pokemon por su nombre.
+
+- La aplicación es responsiva al 100% (usé medias queries para esto).
+
+[Ir al inicio](#cabedex)
+
+---
+
+## Licencia
+
+MIT License
+
+Copyright (c) [2021] [Heraldo Fortuna]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[Ir al inicio](#cabedex)
+
+---
+
+## Autor
+
+- Twitter - [@heraldofortuna](https://twitter.com/heraldofortuna)
+- GitHub - [heraldofortuna](https://github.com/heraldofortuna)
+- Linkedin - [heraldofortuna](https://www.linkedin.com/in/heraldo-fortuna/)
+
+[Ir al inicio](#cabedex)
