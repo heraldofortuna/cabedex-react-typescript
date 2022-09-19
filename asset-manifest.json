@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/cabedex-react-typescript/static/js/main.313c1f90.js",
+    "main.js": "/cabedex-react-typescript/static/js/main.2a68a20c.js",
     "index.html": "/cabedex-react-typescript/index.html",
-    "main.313c1f90.js.map": "/cabedex-react-typescript/static/js/main.313c1f90.js.map"
+    "main.2a68a20c.js.map": "/cabedex-react-typescript/static/js/main.2a68a20c.js.map"
   },
   "entrypoints": [
-    "static/js/main.313c1f90.js"
+    "static/js/main.2a68a20c.js"
   ]
 }
