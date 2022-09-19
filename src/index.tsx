@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import GlobalStyle from "./styles/globalStyles";
 import Home from "./pages/Home";
@@ -18,13 +18,16 @@ root.render(
     <div className="app">
       <div className="wrapper">
         <Header />
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="pokemon" element={<Pokemon />} />
-            <Route path="pokemon/:pokename" element={<PokemonInfo />} />
+            <Route
+              path="pokemon/:pokename"
+              element={<PokemonInfo />}
+            />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
         <Footer />
       </div>
     </div>

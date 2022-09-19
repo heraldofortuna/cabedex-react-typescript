@@ -22,10 +22,9 @@ const Home: React.FC = () => {
     <StyledContainer>
       <p>Choose an option:</p>
       <StyledOptions>
-        <Link to="pokemon">Find Pokemon</Link>
-        {/* <Link to="pokemon">
+        <Link to="pokemon">
           <Button text="Find Pokemon" />{" "}
-        </Link> */}
+        </Link>
       </StyledOptions>
     </StyledContainer>
   );
